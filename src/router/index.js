@@ -1,12 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomePage from '../views/HomePage'
-import Search from '@/views/Search'
-import Consult from '@/views/Consult'
-import My from '@/views/My'
-import Land from '@/views/Land'
-import Layout from '@/views/Layout'
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,30 +9,34 @@ const routes = [
   },
   {
     path: '/home',
-    component: Layout,
+    component: () => import('@/views/Layout'),
     children: [
       {
         name: 'cs',
         path: '/home',
-        component: HomePage
+        component: () => import('../views/HomePage')
       },
       {
         path: '/home/house',
-        component: Search
+        component: () => import('@/views/Search')
       },
       {
         path: '/home/message',
-        component: Consult
+        component: () => import('@/views/Consult')
       },
       {
         path: '/home/profile',
-        component: My
+        component: () => import('@/views/My')
       }
     ]
   },
   {
     path: '/login',
-    component: Land
+    component: () => import('@/views/Land')
+  },
+  {
+    path: '/city',
+    component: () => import('@/views/City')
   }
 ]
 

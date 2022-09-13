@@ -14,11 +14,12 @@
     </div>
     <van-grid :column-num="3">
       <van-grid-item
-        v-for="value in 6"
-        :key="value"
-        icon="photo-o"
-        text="文字"
-      />
+        v-for="(item, index) in mydata"
+        :key="index"
+        :icon="item.icon"
+        :text="item.name"
+      >
+      </van-grid-item>
     </van-grid>
     <div class="banner">
       <img src="http://liufusong.top:8080/img/profile/join.png" alt="" />
@@ -27,7 +28,38 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      mydata: [
+        {
+          icon: 'star-o',
+          name: '我的收藏'
+        },
+        {
+          icon: 'wap-home-o',
+          name: '我的出租'
+        },
+        {
+          icon: 'clock-o',
+          name: '看房记录'
+        },
+        {
+          icon: 'newspaper-o',
+          name: '成为房主'
+        },
+        {
+          icon: 'contact',
+          name: '个人资料'
+        },
+        {
+          icon: 'service-o',
+          name: '联系我们'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -50,8 +82,8 @@ export default {}
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   background-color: #fff;
   box-shadow: 0 0 10px 5px #ddd;
   border-radius: 50%;
@@ -61,11 +93,11 @@ export default {}
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
+  width: 60px;
   margin: auto;
 }
 .loadInfo {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 .van-grid {
   top: 22%;
@@ -80,5 +112,20 @@ export default {}
 .banner img {
   width: 100%;
   height: 86px;
+}
+.tourists {
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+.loadInfo a {
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 13px;
+  background-color: #21b97a;
+  border-radius: 5px;
 }
 </style>

@@ -6,7 +6,17 @@ import {
   Tabbar,
   TabbarItem,
   Grid,
-  GridItem
+  Toast,
+  GridItem,
+  Swipe,
+  SwipeItem,
+  Search,
+  Cell,
+  CellGroup,
+  Icon,
+  IndexBar,
+  IndexAnchor,
+  Image as VanImage
 } from 'vant'
 const components = [
   Form,
@@ -16,7 +26,17 @@ const components = [
   Tabbar,
   TabbarItem,
   Grid,
-  GridItem
+  Toast,
+  GridItem,
+  Swipe,
+  SwipeItem,
+  Search,
+  Cell,
+  CellGroup,
+  Icon,
+  IndexBar,
+  IndexAnchor,
+  VanImage
 ]
 const registerVant = (Vue) => {
   components.forEach((component) => Vue.use(component))
